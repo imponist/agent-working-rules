@@ -1,81 +1,60 @@
 # Agent Working Rules
 
-Reusable instructions for working with AI coding agents across projects.
+Portable instructions for working with Florian across AI coding agents and projects.
 
 Humans should start here. Agents should start with [index.md](index.md).
 
-## What This Is
+## Purpose
 
-This folder contains a portable collaboration contract for AI agents. It tells an agent how to work with you: when to ask questions, when to act, how to handle ambiguity, how to prove results, how to control scope, and how to avoid shallow agreement.
+These rules define when an agent should ask or act, how it should control scope, which actions require explicit authorization, and what evidence supports a completion claim. The aim is consistent, honest work without turning every task into a long planning exercise.
 
-The goal is not to make the agent verbose or bureaucratic. The goal is to make its work more useful, honest, and verifiable.
+The structure separates mandatory behavior from optional guidance:
 
-## When To Use It
+- [index.md](index.md): short agent entrypoint and routing map.
+- [global-working-rules.md](global-working-rules.md): canonical portable operating contract.
+- [efficiency-delegation-policy.md](efficiency-delegation-policy.md): conditional policy read only when parallel work is under consideration.
+- [working-with-ai-agent.md](working-with-ai-agent.md): human-facing prompt guide and examples.
+- [evaluation-checklist.md](evaluation-checklist.md): maintainer-facing comparison method for rule revisions.
 
-Use this folder when you want consistent agent behavior across repositories, tools, or projects.
+## Add It To A Project
 
-It is especially useful when you want an agent to:
-
-- infer missing task details without asking unnecessary questions;
-- ask when ambiguity would cause rework or risk;
-- challenge weak assumptions instead of agreeing by default;
-- keep edits scoped to the task;
-- report evidence before claiming work is done;
-- preserve uncertainty instead of sounding falsely confident.
-
-## How To Add It To A Project
-
-Copy this folder into your project, then point your project-level agent instructions at it.
-
-For `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, or equivalent files, add:
+Copy this folder into the project and add the following to its `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, or equivalent instructions:
 
 ```markdown
 ## Working Rules
 
-Read `agent-working-rules/index.md` before starting work. Treat it as the default collaboration contract unless this project file gives more specific instructions.
+Read `agent-working-rules/index.md` before starting work. Treat it as the default collaboration contract unless this project gives more specific instructions.
 ```
 
-If you do not want to copy the whole folder, copy the compact rules from [global-working-rules.md](global-working-rules.md) into your project instruction file instead.
+Keep project-specific conventions, commands, source routing, safety rules, and mutation boundaries in the project's own instruction files. They should not be generalized into this portable repository unless they recur across projects.
 
-## How To Use It With An Agent
+If copying the folder is undesirable, copy [global-working-rules.md](global-working-rules.md) directly into the project instructions. That file is the canonical compact policy.
 
-The intended agent entrypoint is [index.md](index.md).
+## Adaptation
 
-That file is written for agents. It explains instruction priority, the default task contract, action modes, scope control, evidence expectations, delegation rules, and completion standards.
+Good customization targets include:
 
-The short version:
+- directness and response depth;
+- when edits require confirmation;
+- test and evidence expectations;
+- minimal patch versus broader refactoring;
+- forbidden files, systems, or external actions;
+- whether and when parallel agents are worth their cost.
 
-1. Your project instructions should tell the agent to read `agent-working-rules/index.md`.
-2. Project-specific instructions still win when they conflict with these reusable rules.
-3. The current user request still matters more than generic working preferences.
-4. The agent should prove results with concrete evidence: files read or changed, commands run, tests passed, sources used, or verification gaps.
+Avoid vague instructions such as “be smart” or “make it better.” Prefer observable behavior, boundaries, and evidence requirements.
 
-## How To Adapt It
+Keep platform-specific model names, configured agent names, and tool commands in project or platform configuration. The portable policy describes capabilities rather than assuming that every agent environment exposes the same tools.
 
-Start by editing [global-working-rules.md](global-working-rules.md). That file is the compact baseline and is easiest to customize.
+## Maintaining The Rules
 
-Then adjust [index.md](index.md) if you want to change the agent-facing workflow in more detail.
+Treat [global-working-rules.md](global-working-rules.md) as the single source of truth for operating behavior. Do not repeat its full policy in `index.md`, this README, or the human prompt guide.
 
-Good customization targets:
+When changing behavior:
 
-- how direct or terse the agent should be;
-- whether it should ask before editing files;
-- what counts as enough evidence for completion;
-- how much planning you want before implementation;
-- which folders, files, services, or actions are off limits;
-- whether subagents or parallel research are allowed.
+1. State the failure or inefficiency the new rule addresses.
+2. Prefer consolidating or replacing a rule over adding another overlapping instruction.
+3. Update the version and review date in `index.md` when behavior changes materially.
+4. Use [evaluation-checklist.md](evaluation-checklist.md) to compare the candidate with the current contract on representative tasks.
+5. Claim an improvement only when the comparison preserves quality and boundaries while improving the intended metric.
 
-Avoid vague rules like "be smart" or "make it better". Agents respond better to concrete behavior, boundaries, and evidence requirements.
-
-## File Map
-
-- [index.md](index.md): main agent-facing entrypoint. Tell agents to read this first.
-- [global-working-rules.md](global-working-rules.md): compact baseline rules suitable for copying into other instruction files.
-- [working-with-ai-agent.md](working-with-ai-agent.md): fuller explanation, prompt template, examples, and guidance for asking better tasks.
-- [efficiency-delegation-policy.md](efficiency-delegation-policy.md): rules for when delegation or subagents are worth using.
-
-## Recommended Repository Shape
-
-Keep this `README.md` human-facing and keep `index.md` agent-facing.
-
-That split makes the GitHub landing page useful for colleagues while preserving a clear operational entrypoint for agents.
+Rule quality cannot be established from prose alone. A smaller prompt may be cheaper but miss important boundaries; a longer prompt may improve one difficult task while creating unnecessary ceremony everywhere else. Measure the tradeoff.

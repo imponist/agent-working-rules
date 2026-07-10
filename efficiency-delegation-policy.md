@@ -1,33 +1,40 @@
 # Efficiency Delegation Policy
 
-Reusable agent-facing policy for making subagent and model-use decisions more efficient across cost, speed, and depth.
+Read this policy only when considering subagents or parallel work. Optimize cost, speed, context quality, and result quality together.
 
-## Policy
+## Decision Rule
 
-The default optimization target is balanced efficiency: improve cost, speed, and depth together rather than blindly minimizing one at the expense of the others.
+Work locally when the task is small, linear, blocking, ambiguous, tightly coupled, or likely to require frequent user decisions.
 
-- Keep the main agent on the immediate critical path.
-- Use subagents for bounded parallel side work that saves time, protects the main-thread context, or improves review quality.
-- Prefer doing work locally when a task is small, linear, blocking, ambiguous, tightly coupled, or likely to require frequent back-and-forth.
-- Default to 1-3 subagents. Use more only for clearly parallel large reviews or investigations, and stay within the configured thread limit.
+Delegate only when work is independent and well-scoped, and the expected benefit from parallel speed, isolated noisy context, specialist review, or broader coverage outweighs the additional token and coordination cost. Do not duplicate work between the main agent and subagents.
 
-## Standing Authorization
+Use the minimum useful number:
 
-- The agent may automatically spawn subagents when the work is independent, well-scoped, read-heavy, noisy, or benefits from multiple perspectives.
-- Ask the user first when delegation would exceed normal limits, use unusually expensive or deep review, create overlapping write scopes, or depend on unclear product intent.
-- Before delegating, identify the immediate local task and delegate only non-overlapping sidecar work.
-- Do not duplicate work between the main agent and subagents.
+- One subagent for a bounded side investigation that lets the main agent remain on the critical path.
+- Two for genuinely distinct parallel lanes.
+- Three only for clearly large investigations or reviews with separate concerns.
 
-## Agent Selection
+Ask Florian before using more than three subagents, recursive delegation, unusually expensive or deep review, overlapping write scopes, or delegation that depends on unresolved product intent.
 
-- Use `docs_researcher` for external or current documentation checks.
-- Use `pr_explorer` or `explorer` for fast read-only codebase investigation.
-- Use `reviewer` for correctness, security, regression, and test-gap review.
-- Use `worker` only for implementation subtasks with clear, disjoint ownership.
-- Do not override models manually unless the task has a clear reason; prefer the configured custom agent models.
+## Roles And Boundaries
 
-## Operating Rules
+Choose capabilities that match the work; role labels are descriptive and do not assume a platform has agents with those exact names:
 
-Subagent prompts must include the exact question, scope, expected output, and whether file edits are allowed. Read-only is the default for exploration, documentation, review, and planning. Worker subagents may edit only when their write scope is disjoint and explicitly assigned.
+- Explorer: read-only repository or document investigation.
+- Researcher: current external documentation or source checks.
+- Reviewer: independent correctness, security, regression, and test-gap analysis.
+- Worker: implementation with explicit, disjoint file ownership.
 
-While working, briefly report delegation decisions and why they are efficient. Close completed agents after integrating their results.
+Exploration, research, review, and planning are read-only by default. Parallel implementation is appropriate only when write scopes are clearly disjoint and integration order is understood. Keep recursive delegation disabled unless Florian explicitly requests it or the project defines a bounded need.
+
+## Delegation Contract
+
+Every delegated task must state:
+
+- the exact question or deliverable;
+- relevant scope and source of truth;
+- whether edits are allowed and, if so, the owned files;
+- expected evidence and output shape;
+- dependencies on other work.
+
+The main agent remains responsible for decisions, integration, and independent verification. Mention delegation to Florian when it materially affects duration, cost, scope, or how results should be interpreted; routine orchestration does not require extra narration.
