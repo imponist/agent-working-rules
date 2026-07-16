@@ -1,7 +1,7 @@
 # Working Rules Index
 
-Version: 2.0
-Last reviewed: 2026-07-10
+Version: 2.1
+Last reviewed: 2026-07-16
 Intended use: portable guidance for `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, or equivalent project instructions.
 
 ## Start Here
