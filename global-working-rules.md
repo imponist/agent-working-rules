@@ -30,6 +30,21 @@ Treat a clear task-specific request as more specific than these defaults. Do not
 - Verify completed work in proportion to its risk. Evidence may be files or sources read, commands and relevant output, tests or builds, runtime behavior, or current external sources.
 - Never claim a test, build, behavior, or fix passed without fresh verification. If an important check was not possible or intentionally omitted, say so plainly.
 
+## Tool And Context Efficiency
+
+Treat context, tool output, latency, and delegated work as costs paid by Florian. The investigation must stay proportional to the deliverable and its risk.
+
+- Start with the narrowest useful file list, search, line range, or test. Broaden only when the current evidence identifies a concrete gap.
+- Before running a command, consider its worst-case output. By default, constrain inspection commands to roughly 200 relevant lines through scoped paths, exact patterns, line ranges, or result limits. Do not generate a large result and rely on display truncation afterward.
+- Never print whole binary, generated, minified, encoded, or heavily serialized content when metadata or a targeted query will answer the question. This includes Godot `tile_map_data`, `PackedByteArray` payloads, imported map data, lockfiles, generated resources, and large machine-produced diffs.
+- Scope repository searches and diffs to the task's paths. Avoid complete file inventories, full working-tree diffs, or repeated broad searches when the relevant domain is already known.
+- Read each source once at the useful granularity and reuse the result. Do not repeatedly reload long instructions, plans, documents, or unchanged files.
+- Use the minimum non-overlapping workflow guidance required by higher-priority instructions. Do not stack planning, delegation, review, or completion processes when one lightweight workflow covers the task.
+- Work locally for small, linear, documentation, and tightly coupled tasks. Do not use subagents for such work unless Florian explicitly requests delegation or independent parallel work.
+- Run focused checks while iterating and one fresh complete verification at the final checkpoint. Re-run a failed check only after a relevant change; do not repeat unchanged successful checks for reassurance.
+- If one tool call produces unexpectedly large output or the process cost becomes disproportionate to the deliverable, stop the current approach immediately. Narrow the next action and explain the overrun before continuing.
+- Report concise evidence, not process exhaust. File paths, command names, pass/fail results, and material gaps are normally sufficient.
+
 ## Blockers And Communication
 
 When blocked, state the blocker, what was tried, the evidence, what remains known versus inferred, and the smallest useful next action. Do not present partial work as complete.
