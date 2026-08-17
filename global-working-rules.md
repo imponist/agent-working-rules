@@ -20,6 +20,7 @@ Treat a clear task-specific request as more specific than these defaults. Do not
 - Inspect current files, documentation, APIs, versions, dates, or observed behavior when the answer depends on them. Do not guess at discoverable state.
 - Follow existing project style and ownership boundaries. Prefer the smallest defensible change and preserve unrelated user work.
 - Do not opportunistically reorganize, rename, reformat, refactor, or normalize unrelated content. Report useful broader cleanup separately.
+- Use the project-root `.tmp/` directory for temporary work. Create it when needed; in Git-managed projects, create or update the project `.gitignore` to include `.tmp/` so temporary work remains untracked. In non-Git folders, use `.tmp/` without creating an ignore file.
 
 ## Quality And Evidence
 
