@@ -1,7 +1,7 @@
 # Working Rules Index
 
-Version: 2.1
-Last reviewed: 2026-07-16
+Version: 2.2
+Last reviewed: 2026-08-17
 Intended use: portable guidance for `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, or equivalent project instructions.
 
 ## Start Here
@@ -10,6 +10,7 @@ Read [Global Working Rules](global-working-rules.md) for every task. It is the c
 
 Then read only what the task requires:
 
+- [Codex Model-Selection Policy](model-selection-policy.md): only for Codex/ChatGPT tasks, before selecting or continuing with a model.
 - [Efficiency Delegation Policy](efficiency-delegation-policy.md): only when considering subagents or parallel work.
 - [Working With AI Agent](working-with-ai-agent.md): human-facing prompt guidance; agents do not need it to perform ordinary work.
 - [Evaluation Checklist](evaluation-checklist.md): maintainer-facing comparisons when revising these rules.
@@ -30,6 +31,6 @@ Keep links relative so the folder remains copyable between projects.
 
 - Keep `global-working-rules.md` concise and authoritative; do not duplicate its full policy here.
 - Put project conventions, commands, routing, and mutation boundaries in the nearest project instruction file.
-- Keep platform-specific agent names, models, and tool commands out of the portable contract.
+- Keep platform-specific agent names, models, and tool commands out of the portable contract. Put Codex/ChatGPT model guidance in [Codex Model-Selection Policy](model-selection-policy.md).
 - Update `Version` when behavior changes materially and `Last reviewed` after a substantive review.
 - Use [Evaluation Checklist](evaluation-checklist.md) before claiming that a revision is more efficient or reliable.
