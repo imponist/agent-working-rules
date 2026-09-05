@@ -10,9 +10,10 @@ This Codex/ChatGPT-specific policy makes model choice a deliberate part of the t
 
 - Use **GPT-5.6 Luna** for fast, high-volume, bounded work: routing, classification, extraction, support, short summaries, background automation, and focused coding tasks.
 - Use **GPT-5.6 Terra** as the default for ordinary production work: reporting, document analysis, coding, and tasks that require sound judgment.
-- Use **GPT-5.6 Sol** only for genuinely hard work: complex reasoning, materially unresolved ambiguity, advanced coding, or high-stakes decisions.
+- Use **GPT-5.6 Sol** for genuinely hard work: complex reasoning, materially unresolved ambiguity, advanced coding, or high-stakes decisions.
+- Use **GPT-6 Astra** only for the most demanding work: exceptionally complex or consequential reasoning, deep technical investigation, difficult architecture, or work whose remaining uncertainty is genuinely beyond Sol's fit.
 
-Do not choose Sol solely because the task is important, unfamiliar, or underspecified. First determine whether Terra can handle it through focused inspection or one targeted clarification. Escalate to Sol when the remaining reasoning, ambiguity, technical depth, or decision risk is genuinely beyond Terra's fit. A task may also be downgraded to Luna when it becomes bounded and repetitive.
+Do not choose Sol or Astra solely because the task is important, unfamiliar, or underspecified. First determine whether Terra can handle it through focused inspection or one targeted clarification. Escalate to Sol when the remaining reasoning, ambiguity, technical depth, or decision risk is genuinely beyond Terra's fit. Escalate from Sol to Astra only when that remaining work is genuinely beyond Sol's fit. A task may also be downgraded to Luna when it becomes bounded and repetitive.
 
 ## Enforce The Recommendation
 
@@ -24,6 +25,7 @@ On ChatGPT Plus, local messages and cloud chats share a five-hour window, and ad
 
 | Model | Approximate messages per 5 hours |
 | --- | ---: |
+| GPT-6 Astra | Check the current ChatGPT/Codex UI; this model's limits are not yet characterized here. |
 | GPT-5.6 Sol | 10–100 |
 | GPT-5.6 Terra | 25–200 |
 | GPT-5.6 Luna | 250–2,000 |
