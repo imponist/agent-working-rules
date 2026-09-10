@@ -12,7 +12,8 @@ The structure separates mandatory behavior from optional guidance:
 
 - [index.md](index.md): short agent entrypoint and routing map.
 - [global-working-rules.md](global-working-rules.md): canonical portable operating contract.
-- [model-selection-policy.md](model-selection-policy.md): conditional Codex/ChatGPT model-selection policy.
+- [codex-model-selection-policy.md](codex-model-selection-policy.md): Codex/ChatGPT model and reasoning-effort selection policy.
+- [claude-model-selection-policy.md](claude-model-selection-policy.md): Claude model, effort, budget, and multi-model selection policy.
 - [efficiency-delegation-policy.md](efficiency-delegation-policy.md): conditional policy read only when parallel work is under consideration.
 - [working-with-ai-agent.md](working-with-ai-agent.md): human-facing prompt guide and examples.
 - [evaluation-checklist.md](evaluation-checklist.md): maintainer-facing comparison method for rule revisions.
@@ -44,7 +45,7 @@ Good customization targets include:
 
 Avoid vague instructions such as “be smart” or “make it better.” Prefer observable behavior, boundaries, and evidence requirements.
 
-Keep platform-specific model names, configured agent names, and tool commands in project or platform configuration. This folder's Codex/ChatGPT-specific exception is [model-selection-policy.md](model-selection-policy.md); the portable policy continues to describe capabilities rather than assuming that every agent environment exposes the same tools.
+Keep platform-specific model names, configured agent names, and tool commands in project or platform configuration. The platform-specific exceptions are [codex-model-selection-policy.md](codex-model-selection-policy.md) for Codex/ChatGPT and [claude-model-selection-policy.md](claude-model-selection-policy.md) for Claude; the portable policy continues to describe capabilities rather than assuming that every agent environment exposes the same tools.
 
 ## Maintaining The Rules
 
