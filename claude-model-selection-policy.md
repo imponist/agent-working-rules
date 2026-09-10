@@ -1,6 +1,6 @@
 # Claude Model-Selection Policy
 
-Version: 1.0  
+Version: 1.1  
 Last reviewed: 2026-09-10  
 Source: [Anthropic — Optimizing for cost and intelligence](https://platform.claude.com/docs/en/about-claude/models/optimizing-for-cost-and-intelligence)
 
@@ -61,6 +61,16 @@ silently inherit the coordinator's model or spend profile. Give mechanical extra
 pagination, classification, and routine condensation to the cheapest capable worker; keep final
 synthesis, consequential judgment, and integration with the coordinator unless evaluation proves a
 different split better.
+
+In Claude Code, "select a model explicitly" means passing the `model` field on every `Agent` call
+(`haiku`, `sonnet`, `opus`, or `fable`; a `fork` subagent always inherits the parent regardless of
+what is passed). An `Agent` call with no `model` field is a silent inherit, not a neutral default —
+it lands on the coordinator's own model, normally the most expensive one available. Stating the
+principle without naming the field is exactly how it gets skipped in practice: agreeing that lanes
+need an explicit model choice is not the same action as typing the field on the call about to be
+made. See [Efficiency Delegation Policy](efficiency-delegation-policy.md) → Model And Budget for
+this harness's operative checklist (budget, fail-fast, no nested subagents) — read both before
+writing a delegated task; this section supplies the cost reasoning, that one the enforceable form.
 
 ## Tune Effort and Retry Safely
 
