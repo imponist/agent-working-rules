@@ -8,7 +8,7 @@ Complete the work with the main agent when one agent can do it efficiently. In p
 
 Delegate only when a bounded, independent lane has a concrete advantage from parallel speed, isolated noisy context, specialist review, or broader coverage. That advantage must clearly outweigh startup time, context transfer, additional tokens, coordination, result integration, latency, and the risk of interrupted or lost work. Parallelism is not a benefit by itself. Do not delegate work that the main agent could likely finish faster, or duplicate work between the main agent and subagents.
 
-Delegated tokens are Florian's tokens. A cost, context, or budget warning from Florian applies to
+Delegated tokens are the User's tokens. A cost, context, or budget warning from the User applies to
 the whole session including every delegated lane — not only to the main agent's own context. When he
 signals cost pressure, cut delegated scope and model strength or stop delegating. Keeping the main
 context small does not satisfy the warning.
@@ -18,7 +18,7 @@ Use the minimum useful number:
 - Prefer one subagent for a bounded side investigation that lets the main agent remain on the critical path.
 - Use two only for genuinely distinct lanes with a meaningful expected gain in completion time or coverage.
 
-Ask Florian before using three or more subagents, recursive delegation, unusually expensive or deep review, overlapping write scopes, or delegation that depends on unresolved product intent.
+Ask the User before using three or more subagents, recursive delegation, unusually expensive or deep review, overlapping write scopes, or delegation that depends on unresolved product intent.
 
 ## Model And Budget
 
@@ -57,7 +57,7 @@ Choose capabilities that match the work; role labels are descriptive and do not 
 - Reviewer: independent correctness, security, regression, and test-gap analysis.
 - Worker: implementation with explicit, disjoint file ownership.
 
-Exploration, research, review, and planning are read-only by default. Parallel implementation is appropriate only when write scopes are clearly disjoint and integration order is understood. Keep recursive delegation disabled unless Florian explicitly approves it for the task.
+Exploration, research, review, and planning are read-only by default. Parallel implementation is appropriate only when write scopes are clearly disjoint and integration order is understood. Keep recursive delegation disabled unless the User explicitly approves it for the task.
 
 ## Delegation Contract
 
@@ -76,4 +76,4 @@ The last three are not optional boilerplate. A delegated prompt that omits them 
 retry forever, fan out recursively, and consume an unbounded budget without anyone noticing until the
 session limit is reached.
 
-The main agent remains responsible for decisions, integration, and independent verification. Mention delegation to Florian when it materially affects duration, cost, scope, or how results should be interpreted; routine orchestration does not require extra narration.
+The main agent remains responsible for decisions, integration, and independent verification. Mention delegation to the User when it materially affects duration, cost, scope, or how results should be interpreted; routine orchestration does not require extra narration.

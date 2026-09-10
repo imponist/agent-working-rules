@@ -1,6 +1,6 @@
 # Agent Working Rules
 
-Portable instructions for working with Florian across AI coding agents and projects.
+Portable instructions for working with the User across AI coding agents and projects.
 
 Humans should start here. Agents should start with [index.md](index.md).
 

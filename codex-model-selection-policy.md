@@ -8,7 +8,7 @@ supplements the global working rules; platform availability, system/developer in
 and permission constraints always win.
 
 The goal is the smallest available model and lowest reasoning effort that can meet the task's
-quality bar. Model choice is deliberate: it should reduce Florian's cost, latency, and quota use
+quality bar. Model choice is deliberate: it should reduce the User's cost, latency, and quota use
 without creating rework, failed outputs, or a weaker result.
 
 ## Start Every Task With a Model Recommendation
@@ -17,7 +17,7 @@ Before substantive task action, state:
 
 > I recommend using `<model>` for `<task>`.
 
-If the active model is not the best fit, ask Florian to switch once and pause substantive task work
+If the active model is not the best fit, ask the User to switch once and pause substantive task work
 until he decides. An agent cannot change the session model itself. Do not overrule model
 availability or higher-priority instructions.
 

@@ -1,12 +1,12 @@
 # Working Rules Index
 
-Version: 2.8
+Version: 2.9
 Last reviewed: 2026-09-10
 Intended use: portable guidance for `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, or equivalent project instructions.
 
 ## Start Here
 
-Read [Global Working Rules](global-working-rules.md) for every task. It is the canonical operating contract for working with Florian.
+Read [Global Working Rules](global-working-rules.md) for every task. It is the canonical operating contract for working with the User.
 
 Then read only what the task requires:
 
