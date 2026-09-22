@@ -17,6 +17,7 @@ The structure separates mandatory behavior from optional guidance:
 - [efficiency-delegation-policy.md](efficiency-delegation-policy.md): conditional policy read only when parallel work is under consideration.
 - [working-with-ai-agent.md](working-with-ai-agent.md): human-facing prompt guide and examples.
 - [evaluation-checklist.md](evaluation-checklist.md): maintainer-facing comparison method for rule revisions.
+- [enforcement/](enforcement/README.md): optional, platform-specific enforcement of the rules that fail most often when they are only read. Currently Claude Code hooks.
 
 ## Add It To A Project
 
@@ -46,6 +47,8 @@ Good customization targets include:
 Avoid vague instructions such as “be smart” or “make it better.” Prefer observable behavior, boundaries, and evidence requirements.
 
 Keep platform-specific model names, configured agent names, and tool commands in project or platform configuration. The platform-specific exceptions are [codex-model-selection-policy.md](codex-model-selection-policy.md) for Codex/ChatGPT and [claude-model-selection-policy.md](claude-model-selection-policy.md) for Claude; the portable policy continues to describe capabilities rather than assuming that every agent environment exposes the same tools.
+
+Platform-specific enforcement code belongs in [enforcement/](enforcement/README.md), one folder per platform, so the rest of the repository stays agent-agnostic. Enforcement is optional: an agent without hook support gets the text and nothing more.
 
 ## Maintaining The Rules
 
