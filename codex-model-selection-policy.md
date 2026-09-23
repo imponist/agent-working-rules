@@ -1,7 +1,8 @@
 # Codex Model-Selection Policy
 
-Version: 1.0  
-Last reviewed: 2026-09-10
+Version: 1.1
+Last reviewed: 2026-09-23
+Source: [OpenAI model catalog](https://developers.openai.com/api/docs/models) and [deprecations](https://developers.openai.com/api/docs/deprecations)
 
 Use this policy before choosing the model or reasoning effort for a Codex/ChatGPT task. It
 supplements the global working rules; platform availability, system/developer instructions, safety,
@@ -25,14 +26,14 @@ availability or higher-priority instructions.
 
 | Model | Use for | Escalate when |
 | --- | --- | --- |
-| **GPT-5.6 Luna** | Fast, high-volume, bounded work: routing, classification, extraction, support, short summaries, background automation, and focused coding. | The task needs non-routine judgment, substantial integration, or deeper reasoning. |
+| **GPT-6 Luna** | Focused, high-volume, bounded work: routing, classification, extraction, support, short summaries, background automation, and focused coding. Compare it with GPT-5.6 Luna when both are available. | The task needs non-routine judgment, substantial integration, or deeper reasoning. |
+| **GPT-5.6 Luna** | An established option for fast, high-volume, bounded work when prior evaluation, availability, or platform behavior favors it. | A lower-cost available candidate does not meet the quality bar, or the task needs non-routine judgment, substantial integration, or deeper reasoning. |
 | **GPT-5.6 Terra** | Ordinary production work: reporting, document analysis, coding, and tasks requiring sound judgment. This is the practical default. | Focused inspection or one targeted clarification still leaves material ambiguity, technical depth, or decision risk. |
-| **GPT-5.6 Sol** | Genuinely difficult work: complex reasoning, advanced coding, materially unresolved ambiguity, or high-stakes decisions. | The remaining work needs exceptional sustained reasoning, difficult architecture, or investigation beyond Sol's fit. |
+| **GPT-6 Sol** | Complex coding and agentic workflows that need more than ordinary production judgment. Compare it with GPT-5.6 Sol when both are available. | The remaining work needs exceptional sustained reasoning, difficult architecture, or investigation beyond Sol's fit. |
+| **GPT-5.6 Sol** | An established flagship option for complex professional work when prior evaluation, availability, or platform behavior favors it. | The remaining work needs exceptional sustained reasoning, difficult architecture, or investigation beyond Sol's fit. |
 | **GPT-6 Astra** | The most demanding, consequential end-to-end work: difficult architecture, deep technical investigation, or multiple hard tool-using steps. | Do not escalate further; constrain scope, clarify the decision, or split genuinely independent work instead. |
 
-Importance, unfamiliarity, or an underspecified prompt alone do not justify Sol or Astra. First see
-whether Terra can resolve the uncertainty through narrow inspection or one material clarification.
-Likewise, downgrade to Luna when a task becomes clear, bounded, and repetitive.
+Newer releases do not retire the GPT-5.6 family by implication. Keep GPT-5.6 models as candidates until OpenAI publishes a deprecation or platform availability changes. Importance, unfamiliarity, or an underspecified prompt alone do not justify either Sol model or Astra. First see whether Terra can resolve the uncertainty through narrow inspection or one material clarification. Likewise, downgrade to a Luna model when a task becomes clear, bounded, and repetitive.
 
 ## Set Reasoning Effort Deliberately
 
@@ -52,16 +53,20 @@ Before raising effort or model strength, tighten the request: define done, give 
 source and constraints, specify the required output shape, and state how success will be checked.
 Clear context is usually cheaper than brute-force reasoning.
 
+Use only the models and reasoning-effort levels exposed by the active Codex or ChatGPT surface. When GPT-6 Sol and GPT-6 Luna are available alongside their GPT-5.6 counterparts, compare the lowest-cost candidate that meets the same representative quality check; do not assume a newer release is an automatic replacement.
+
 ## Cost-Intelligent Operating Rules
 
 1. Match the choice to the hardest unresolved part of the task, not its apparent prestige or the
    size of the input.
-2. Keep routine extraction, filtering, transformations, and narrow summaries on Luna whenever the
-   expected output is clear and checkable.
+2. For routine extraction, filtering, transformations, and narrow summaries, compare GPT-6 Luna
+   and GPT-5.6 Luna when both are available; use the lowest-cost candidate that meets the quality
+   bar.
 3. Keep ordinary implementation, analysis, and synthesis on Terra unless concrete evidence shows
    that it cannot meet the quality bar.
-4. Use Sol for the small set of tasks where stronger reasoning changes the outcome; use Astra only
-   when Sol leaves an objectively hard remainder.
+4. For the small set of tasks where stronger reasoning changes the outcome, compare GPT-6 Sol and
+   GPT-5.6 Sol when both are available; use Astra only when those candidates leave an objectively
+   hard remainder.
 5. Prefer targeted inspection, tests, and a concise clarification over an automatic model
    escalation. They produce evidence and often turn a hard-looking task into a bounded one.
 6. When delegated work is permitted, choose the model for each lane explicitly. Give cheap,
@@ -75,12 +80,12 @@ Clear context is usually cheaper than brute-force reasoning.
 
 Before acting, answer:
 
-1. Is the task clear and repeatable? Use Luna.
+1. Is the task clear and repeatable? Compare GPT-6 Luna and GPT-5.6 Luna when both are available.
 2. Does it need ordinary judgment, coding, or document analysis? Use Terra.
 3. Is there unresolved complexity, ambiguity, or high decision risk that Terra cannot clear with
-   focused work? Use Sol.
-4. Does that remaining challenge still exceed Sol across several difficult steps or a consequential
-   architecture/investigation? Use Astra.
+   focused work? Compare GPT-6 Sol and GPT-5.6 Sol when both are available.
+4. Does that remaining challenge still exceed the available Sol candidates across several difficult
+   steps or a consequential architecture/investigation? Use Astra.
 5. What is the lowest reasoning effort consistent with the answer above?
 
 State the recommendation and its reason concisely. If the task changes shape, update the choice
