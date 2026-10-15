@@ -2,7 +2,7 @@
 
 Portable instructions for working with the User across AI coding agents and projects.
 
-Humans should start here. Agents should start with [index.md](index.md).
+Humans should start here. Agents should start with [index.md](agent-working-rules/index.md).
 
 ## Purpose
 
@@ -10,7 +10,7 @@ These rules define when an agent should ask or act, how it should control scope,
 
 The structure separates mandatory behavior from optional guidance:
 
-- [index.md](index.md): short agent entrypoint and routing map.
+- [index.md](agent-working-rules/index.md): short agent entrypoint and routing map.
 - [global-working-rules.md](global-working-rules.md): canonical portable operating contract.
 - [codex-model-selection-policy.md](codex-model-selection-policy.md): Codex/ChatGPT model and reasoning-effort selection policy.
 - [claude-model-selection-policy.md](claude-model-selection-policy.md): Claude model, effort, budget, and multi-model selection policy.
