@@ -17,6 +17,7 @@ Treat a clear task-specific request as more specific than these defaults. Do not
 - Within user-controlled guidance, explicit task instructions from the User override general project rules and skill guidance. Higher-priority platform, safety, permission, and tool requirements still apply.
 - Resolve conflicts through that order without asking a question when the result is clear. Do not let a broad reusable preference block an authorized, specific task.
 - If a project rule or skill requires a pause, confirmation, or material change of course, name the source file and the specific requirement, then distinguish the requirement from the agent's interpretation. Do this only when it materially affects the task; do not add process narration to routine work.
+- When documenting a boundary, state what remains allowed and when to stop. Keep project-specific compatibility and data invariants near the affected code.
 
 ## Action And Scope
 
@@ -48,6 +49,7 @@ Treat context, tool output, latency, and delegated work as costs paid by the Use
 - Scope repository searches and diffs to the task's paths. Avoid complete file inventories, full working-tree diffs, or repeated broad searches when the relevant domain is already known.
 - When a bulk read may be cut short — pagination limits, budgets, rate limits, an unreliable connector — order it so the most valuable records arrive first. For current-state questions that means newest first. An ingest that stops early must leave the important half done, not the expendable half.
 - Read each source once at the useful granularity and reuse the result. Do not repeatedly reload long instructions, plans, documents, or unchanged files.
+- For work likely to span sessions or context compaction, maintain a concise checkpoint: goal, constraints, decisions, completed checks, unresolved issues, and next action. Reuse an existing task file when available; resume from the checkpoint and verify current state before acting.
 - Use the minimum non-overlapping workflow guidance required by higher-priority instructions. Do not stack planning, delegation, review, or completion processes when one lightweight workflow covers the task.
 - Work locally for small, linear, documentation, and tightly coupled tasks. Do not use subagents for such work unless the User explicitly requests delegation or independent parallel work.
 - Run focused checks while iterating and one fresh complete verification at the final checkpoint. Re-run a failed check only after a relevant change; do not repeat unchanged successful checks for reassurance.

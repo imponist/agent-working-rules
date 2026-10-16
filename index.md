@@ -1,7 +1,7 @@
 # Working Rules Index
 
-Version: 3.2
-Last reviewed: 2026-09-23
+Version: 3.4
+Last reviewed: 2026-10-16
 Intended use: portable guidance for `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, or equivalent project instructions.
 
 ## Non-Negotiables

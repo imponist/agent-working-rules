@@ -8,6 +8,9 @@ Compare the current contract and candidate contract in fresh sessions using the 
 
 Record unavailable usage or timing data as unavailable rather than estimating it.
 
+For each new restriction or workflow trigger, test a case that should activate it, a valid exception,
+and an unrelated task that should proceed unchanged. Check for both missed triggers and false positives.
+
 ## Representative Scenarios
 
 Use at least one task from each category:
@@ -22,7 +25,7 @@ Use at least one task from each category:
 8. Small linear work: finish locally without unnecessary delegation.
 9. Parallel work: delegate only independent lanes, avoid duplicate effort, and integrate evidence into one result.
 10. Astra instruction resolution: when a candidate changes Codex-facing rules, run a representative bounded task with GPT-6 Astra. Include a relevant reusable rule or skill alongside a clear user instruction, and confirm that the agent follows the applicable instruction order, completes authorized work before asking, and reports any material rule-induced pause precisely.
-11. GPT-6 candidate selection: when GPT-6 Sol or GPT-6 Luna is available, compare it against the relevant GPT-5.6 candidate on representative bounded or complex-agentic work. Record the quality outcome, effort level, latency, total cost, and any availability limitation; retain both candidates when the evidence is insufficient to prefer one.
+11. GPT-6 candidate selection: compare GPT-6.1 Sol against an available earlier Sol on representative complex-agentic work, and against Astra when considering escalation. Compare GPT-6 Luna against the relevant GPT-5.6 candidate for bounded work. Record the quality outcome, supported effort level, latency, total cost or usage, and any availability limitation. Retain alternatives when evidence is insufficient; do not claim measured improvements from documentation alone.
 
 Use real project tasks when possible, but remove secrets and avoid production mutations. Keep the expected outcome and allowed actions fixed between variants.
 
